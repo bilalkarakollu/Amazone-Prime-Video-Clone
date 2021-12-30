@@ -3,4 +3,4 @@
 
 <h2 dir="auto">Amazone Prime Video Clone Demo Link</h2>
 
-<p dir="auto">The app is deployed using Vercel at <a target="_blank" href="https://amazone-prime-video-clone.vercel.app/" rel="nofollow">Amazone Prime Video Clone Demo Link</a></p>
+<p dir="auto">The app is deployed using Vercel at <a title="go to demo" target="_blank" href="https://amazone-prime-video-clone.vercel.app/" rel="nofollow">Amazone Prime Video Clone Demo Link</a></p>
