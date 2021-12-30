@@ -95,8 +95,7 @@ body {
     width: 100%;
     display: flex;
     gap: 0 10px;
-    overflow: hidden;
-    overflow-x: scroll;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -107,12 +106,6 @@ body {
     overflow: hidden;
 }
 
-
-.card:hover > .card-in{
-    transform: scale(1.56);
-    z-index: 50;
-    position: absolute;
-}
 
 
 @media (max-width: 600px) {
