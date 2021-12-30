@@ -1,13 +1,123 @@
+@import url('/src/Styles/tailwind.css');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    margin: 0;
+    min-height: 100%;
+    background-color: #0f171e;
+    color: white;
+    margin-bottom: 200px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bg-theme {
+    background-color: #0f171e;
+}
+
+.active{
+    border-bottom: 1px solid white;
+}
+
+@media only screen and (min-width: 1200px) {
+.w-74{
+    width: 295px;
+}
+}
+
+.scrollable-content {
+    position: relative;
+}
+.scrollable-content .next,
+.scrollable-content .prev {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    z-index: 1;
+    opacity: 0;
+    transition: 400ms all;
+    pointer-events: none;
+    cursor: pointer;
+    color: var(--icon, #000);
+}
+.scrollable-content.left .prev,
+.scrollable-content.right .next {
+    opacity: 1;
+    pointer-events: auto;
+}
+.scrollable-content .prev {
+    left: 0;
+    z-index: 20;
+}
+.scrollable-content .next {
+    right: 0;
+    z-index: 20;
+}
+.scrollable-content::before,
+.scrollable-content::after {
+    content: '';
+    width: var(--width, 60px);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: 400ms all;
+    pointer-events: none;
+}
+.scrollable-content::before {
+    left: 0;
+    background: #0F171E;
+    z-index: 10;
+}
+.scrollable-content::after {
+    right: 0;
+    background: #0F171E;
+    z-index: 10;
+}
+.scrollable-content.left::before {
+    opacity: 0.7;
+}
+.scrollable-content.right::after {
+    opacity: 0.7;
+}
+
+.news-container {
+    --icon: white;
+    --shadow: #000;
+    --width: 55px;
+    width: 100%;
+}
+.news-content {
+    width: 100%;
+    display: flex;
+    gap: 0 10px;
+    overflow: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.main{
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.card:hover > .card-in{
+    transform: scale(1.56);
+    z-index: 50;
+    position: absolute;
+}
+
+
+@media (max-width: 600px) {
+    .box-content,
+    .news-content {
+        overflow-x: auto;
+    }
 }

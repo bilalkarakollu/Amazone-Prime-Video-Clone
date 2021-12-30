@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import Layout from './Layouts/Home'
+import { Routes, Route } from "react-router-dom";
+import Home from './Pages/Home'
+import $ from 'jquery'
 
 function App() {
+
+  useEffect(() => {
+
+    /*  $('.card').hover(() => {
+       $('.scrollable-inner').removeClass('overflow-x-hidden')
+       $('.scrollable-inner').addClass('overflow-x-visible')
+     }, () => {
+       $('.scrollable-inner').addClass('overflow-x-hidden')
+       $('.scrollable-inner').removeClass('overflow-x-visible')
+     }) */
+
+  }, [0])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="detay" element={<Detay />} />
+        </Route>
+      </Routes>
+    </>
   );
+  function Detay() {
+    return (
+      <div>
+        <h2>Detay</h2>
+      </div>
+    );
+  }
+
 }
 
+
+
 export default App;
+
