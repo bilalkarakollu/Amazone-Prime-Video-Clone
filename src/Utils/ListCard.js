@@ -24,10 +24,10 @@ export default function ListCard({ requests }) {
 
     const writeMovies = () => {
         if (!loading) {
-            return movies.map((data, Id) => {
+            return movies.map((data) => {
                 return (
                     <>
-                        <Card data={data} key={Id} loading={loading} />
+                        <Card data={data} loading={loading} />
                     </>
                 )
             })

@@ -1,40 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Layout from './Layouts/Home'
 import { Routes, Route } from "react-router-dom";
 import Home from './Pages/Home'
-import $ from 'jquery'
+import TV from './Pages/TV'
+import Movie from './Pages/Movie'
+import Categories from './Pages/Categories'
 
 function App() {
-
-  useEffect(() => {
-
-    /*  $('.card').hover(() => {
-       $('.scrollable-inner').removeClass('overflow-x-hidden')
-       $('.scrollable-inner').addClass('overflow-x-visible')
-     }, () => {
-       $('.scrollable-inner').addClass('overflow-x-hidden')
-       $('.scrollable-inner').removeClass('overflow-x-visible')
-     }) */
-
-  }, [0])
 
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="detay" element={<Detay />} />
+          <Route path="storefront/tv" element={<TV />} />
+          <Route path="storefront/movie" element={<Movie />} />
+          <Route path="categories" element={<Categories />} />
         </Route>
       </Routes>
     </>
   );
-  function Detay() {
-    return (
-      <div>
-        <h2>Detay</h2>
-      </div>
-    );
-  }
 
 }
 
